@@ -1,6 +1,6 @@
 # LeaderBoard
 
-> This is a real time Leaderboard App which manage score and provides the latest data from acsending order. Enjoy Watching!
+> This is a real time Leaderboard App which manage score and provides the latest data from ascending order. Enjoy Watching!
 
 ## Live Demo
 
