@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#listbox {
+  height: 50vh;
+  overflow-y: scroll;
+}
