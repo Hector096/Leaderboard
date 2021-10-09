@@ -14,7 +14,7 @@
     <title>Leaderboard</title>
   </head>
   <body>
-    <h1 class="text-center m-5">Leaderboard</h1>
+    <h1 class="text-center m-5 fw-50">Leaderboard</h1>
     <main class="row">
       <div
         class="alert alert-success text-center d-none"
@@ -37,10 +37,12 @@
             refresh
           </button>
         </div>
-        <div class="mt-2 border border-2 border-dark vh-50">
-          <ul id="listbox"></ul>
-        </div>
-
+        
+          <div id="list-box-div" class="mt-2 border border-2 border-dark list d-flex justify-content-center align-items-center">
+            <div id="loader"></div>
+            <ul id="listbox" class="p-0 d-none">
+            </ul>
+          </div>
         <div></div>
       </div>
       <div class="col m-5">
@@ -60,7 +62,7 @@
           />
           <input
             class="p-2"
-            type="text"
+            type="number"
             name="name"
             id="score"
             placeholder="Your score"
