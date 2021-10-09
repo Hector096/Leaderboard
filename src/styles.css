@@ -15,7 +15,7 @@ body {
 li {
   background: white;
   padding: 10px 10px 10px 20px;
-  align-items: center;
+  justify-content: space-between;
 }
 
 li:nth-child(odd) {
