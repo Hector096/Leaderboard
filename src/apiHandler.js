@@ -1,11 +1,11 @@
-const gameId = 'auGrJbH48EOT7bxQ3VSK'
-const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api'
+const gameId = 'auGrJbH48EOT7bxQ3VSK';
+const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
 export const getScores = async () => {
   const response = await fetch(`${BASE_URL}/games/${gameId}/scores`)
     .then((response) => response.json())
     .then((json) => json);
-  return response
+  return response;
 };
 
 export const addScore = async (name, score) => {
@@ -20,6 +20,6 @@ export const addScore = async (name, score) => {
     }),
   })
     .then((response) => response.json())
-    .then((json) => json)
-  return response
+    .then((json) => json);
+  return response;
 };
