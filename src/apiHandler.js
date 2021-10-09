@@ -1,24 +1,25 @@
-import { getData ,saveData} from "./localStorageHandler";
+const gameId = 'auGrJbH48EOT7bxQ3VSK';
+const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
+export const getScores = async () => {
+  const response = await fetch(`${BASE_URL}/games/${gameId}/scores`)
+    .then((response) => response.json())
+    .then((json) => json);
+  return response;
+};
 
-
-export const getGameId = ()=>{
-     let gameIdFromLocalStorage = getData()
-     
-    if( Object.keys(gameIdFromLocalStorage).length === 0 && gameIdFromLocalStorage.constructor === Object){
-        fetch(`${process.env.BASE_URL}/games`, {
-            method: 'POST',
-            body: JSON.stringify({
-              name: 'My cool name'
-            }),
-            headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-            },
-          })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
-
-    }else {
-        return gameIdFromLocalStorage
-    }
-}
+export const addScore = async (name, score) => {
+  const response = await fetch(`${BASE_URL}/games/${gameId}/scores/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      user: name,
+      score,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => json);
+  return response;
+};
